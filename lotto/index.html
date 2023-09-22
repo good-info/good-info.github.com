@@ -1,16 +1,115 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>로또 번호 추출기</title>
-    <link rel="stylesheet" href="style.css">
+    <title>좋은 정보 굿 인포</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* 전체 페이지 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 페이지 컨테이너 스타일 */
+        .page-container {
+            max-width: 1200px; /* 페이지 최대 너비 설정 */
+            margin: 0 auto; /* 가운데 정렬 */
+            padding: 0 20px; /* 좌우 여백 설정 */
+        }
+
+        /* 복리 계산기 컨테이너 스타일 */
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 20px; /* 좌우 여백 설정 */
+        }
+
+        /* 복리 설명 컨테이너 스타일 */
+        .explanation {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 20px 20px; /* 좌우 여백 및 아래 여백 설정 */
+            text-align: center; /* 가운데 정렬 */
+        }
+
+        /* ... (이하 스타일은 이전 답변 참조) */
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>로또 번호 추출기</h1>
-        <button id="generateButton">로또 번호 추출</button>
-        <div id="lottoNumbers" class="lotto-numbers"></div>
+    <div class="page-container">
+        <!-- 복리 계산기 컨테이너 -->
+        <div class="calculator">
+            <h1>복리 계산기</h1>
+            <label for="principal">원금:</label>
+            <input type="number" id="principal" placeholder="원금"><br><br>
+            <label for="rate">연 이율 (%):</label>
+            <input type="number" id="rate" placeholder="연 이율"><br><br>
+            <label for="time">투자 기간 (년):</label>
+            <input type="number" id="time" placeholder="투자 기간" onkeyup="calculateOnEnter(event)"><br><br>
+            <button onclick="calculate()">계산</button>
+                </div>
+        
+        <!-- 결과 컨테이너 -->
+        <div id="result" class="result-block"></div>
+  
+            <div class="page-container">
+                <!-- Table of Contents -->
+                <div class="table-of-contents">
+                    <h1>좋은 정보</h1>
+                    <ul>
+                        <li><a href="https://github.com/good-info/good-info.github.com/tree/main/lotto">로또 추출기</a></li>
+                        <li><a href="#compound-interest">날씨정보</a></li>
+                    </ul>
+                </div>
+        
+                <!-- Compound interest calculator container -->
+                <div class="calculator" id="compound-calculator">
+                    <!-- ... (calculator content) -->
+                </div>
+                
+                <!-- Result container -->
+                <div id="result" class="result-block"></div>
+                
+                <!-- Compound interest explanation container -->
+                <div class="explanation" id="compound-interest">
+                    <!-- ... (explanation content) -->
+                </div>
+            </div>
+            <!-- ... (rest of your code) -->
+        
+        <!-- 복리 설명 컨테이너 -->
+        <div class="explanation">
+            <h2>복리란?</h2>
+            <p>
+                복리는 돈이 시간이 지남에 따라 더 많아지는 현상을 묘사하는 경제 원리입니다. <br>
+                그것은 마치 마법 같다고도 할 수 있습니다. 이 개념은 특히 투자와 저축 분야에서 중요하며, <br>
+                금전적인 성장을 이루기 위한 비밀 무기 중 하나입니다.<br>
+            </p>
+            <p>
+                눈에 띄게 간단한 예제로 설명해보겠습니다.<br>
+                가정해 봅시다. 여러분이 1,000원을 가지고 있고, 이를 연 이율 10%로 투자하려고 합니다.
+            </p>
+            <p>
+                첫 해에, 여러분은 1,000원의 10%인 100원의 이자를 얻게 됩니다. <br>
+                이제 여러분은 1,100원을 가지고 있습니다. 그 다음 해에는, 1,100원에 10% 이자를 얻어 110원이 추가됩니다. 이제 1,210원을 가지게 됩니다.
+            </p>
+            <p>
+                이런 식으로 계속해서 반복하면, 원금은 점점 더 많아지고, 그에 따라 얻는 이자도 더 커집니다. <br>
+                시간이 흐름에 따라 복리의 개념은 돈이 마치 스스로 자라는 것처럼 보이게 됩니다.
+            </p>
+            <p>
+                이것이 복리의 개넘이며, 이 원리를 이해하고 활용하면 금융 계획을 세우고 미래에 대비하는 데 도움이 됩니다. <br>
+                그렇기 때문에 복리는 매우 강력한 경제 개념 중 하나로 여겨지고 있습니다.
+            </p>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
